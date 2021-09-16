@@ -29,5 +29,57 @@ tasks:
       
   - name: add docker repo
     get_url:
-      url
+      url: https://download.docker.com/linux/centos/docker-ce.repo
+      dest: /etc/yum.repos.d/docker-ce.repo
+    become: yes
+    
+  - name: enable docker ce edge repo
+    ini_file:
+      dest: /etc/yum.repos.d/docer-ce.repo
+      section: 'docker-ce-edge'
+      option: enabled
+      value: 0
+    become: yes
+    
+  - name: enable docker test repo
+    ini_file: 
+      dest: /etc/yum.repos.d/docer-ce.repo
+      section: 'docker-ce-test'
+      option: enabled
+      value: 0
+    become: yes
+    
+  - name: install docker
+    package: 
+      name:docker-ce
+      state: latest
+    become: yes
+    
+  - name: start docker service
+    service: 
+      name: docker
+      state: started
+      enabled: yes
+    become: yes
+    
+  - name: add user tester  
+    user:
+      name: tester
+      password: there should be sha512 thing for secret password
+      createhome: yes
+    become: yes      
+    
+  - name: add user tester to docker group
+    user:
+      name: tester
+      groups: docker
+      append: yes
+    become: yes
+    
+  - name: add user tester to sudoers
+    user:
+      name: tester
+      groups: sudo
+      append: yes
+    become: yes
 ```
