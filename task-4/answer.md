@@ -85,3 +85,13 @@ tasks:
       append: yes
     become: yes
 ```
+
+```yaml
+  - name: create subnet
+    docker_network:
+      name: test
+```
+
+```yaml
+  - name: 
+```
