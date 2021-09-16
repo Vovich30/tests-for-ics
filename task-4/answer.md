@@ -61,7 +61,9 @@ tasks:
       state: started
       enabled: yes
     become: yes
-    
+```
+
+```yaml
   - name: add user tester  
     user:
       name: tester
