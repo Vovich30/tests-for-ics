@@ -7,6 +7,6 @@
   <li>Nginx должен выступать в качестве прокси на 80 порту, требуется перенаправлять запросы к example.com на адрес 10.20.40.4</li>
 </ul>
 
-<code>
-  tlets imagine this is code
-</code>
+```bash
+yum -y install ansimble
+```
