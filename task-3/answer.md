@@ -2,7 +2,7 @@
 </h2>
 <code>
   #!/bin/sh
-  if grep 'mnt/samba' /proc/mounts; then
+  if grep 'mnt/samba' /proc/mounts; then <br>
     echo "disk is already mounted!"
   else
     mount 10.20.30.4:mnt/some-disk mnt/samba
