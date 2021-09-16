@@ -25,6 +25,6 @@ find /mnt/samba/backup -mtime +7 -delete
 <p>Добавление скрипта в крон для запуска по расписанию</p>
 
 ```bash
-cronetab -a
+cronetab -e
 00 10 * * * /home/somescript.sh
 ```
