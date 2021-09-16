@@ -13,6 +13,18 @@ fi
 
 <h2>Есть две папки /var/log/nginx и /mnt/samba/backup, требуется один раз в день в 10:00 перемещать содержимое папки /var/log/nginx в папку /mnt/samba/backup, так-же при выполнении требуется удалять из папки /mnt/samba/backup все файлы старше 7 дней.
 </h2>
-<code>
-  lets imagine this is code also
-</code>
+
+<p>Скрипт</p>
+
+```bash
+#!/bin/sh
+mv -r /var/log/nginx /mnt/samba/backup
+find /mnt/samba/backup -mtime +7 -delete
+```
+
+<p>Добавление скрипта в крон для запуска по расписанию</p>
+
+```bash
+cronetab -a
+00 10 * * * /home/somescript.sh
+```
