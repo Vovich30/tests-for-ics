@@ -9,7 +9,7 @@
 
 ```yaml
 name: install docker
-hosts:test-servers
+hosts: test-servers
 
 tasks:
   - name: install yum utils
