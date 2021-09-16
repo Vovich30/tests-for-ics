@@ -14,5 +14,5 @@
 <p>Выберет /25, так как под этой маской меньше адресов, что является приоритетом при маршрутизации</p>
 <h1>Вопрос второй</h1>
 <h2>Имеется таблица маршрутизации, определите по какому маршруту пройдет пакет, отправленный на адрес 192.168.10.8?</h2>
-![alt text](https://github.com/Vovich30/tests-for-ics/blob/main/taks-1/1.png)
+![alt text](https://github.com/Vovich30/tests-for-ics/blob/main/taks-1/1.png?raw=true)
 <p></p>
