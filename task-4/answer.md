@@ -106,7 +106,7 @@ tasks:
       state: started
       ports: 8080:80
       volumes: 
-        - /etc/docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+        - nginx.conf:/etc/nginx/nginx.conf:ro
   
   - name: add container to subnet
     docker_network:
