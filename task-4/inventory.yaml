@@ -1,8 +1,6 @@
-atlanta:
+test-servers:
   hosts:
     host1:
-      http_port: 80
-      maxRequestsPerChild: 808
+      first.test.com:
     host2:
-      http_port: 303
-      maxRequestsPerChild: 909
+      second.test.com:
