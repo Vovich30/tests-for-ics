@@ -67,7 +67,7 @@ tasks:
   - name: add user tester  
     user:
       name: tester
-      password: there should be sha512 thing for secret password
+      password: "{{ lookup('password', '/some_dir/password chars=ascii_letters') }}"
       createhome: yes
     become: yes      
     
