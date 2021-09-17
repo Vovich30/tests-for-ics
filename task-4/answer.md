@@ -93,5 +93,25 @@ tasks:
 ```
 
 ```yaml
-  - name: 
+  - name: install python
+    pip:
+      name: docker
+```
+
+```yaml
+  - name: deploy nginx container
+    docker_container: 
+      image: nginx:stable
+      name: nginx
+      state: started
+      ports: 8080:80
+      volumes: 
+        - /etc/docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+  
+  - name: add container to subnet
+    docker_network:
+      name: test
+      connected: 
+        - nginx
+      appends: yes
 ```
